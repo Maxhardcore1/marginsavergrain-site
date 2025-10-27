@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarginSaverGrain - Maximize Margins, Minimize Losses</title>
+<header>
+    <img src="Logo1.png" alt="MarginSaverGrain Logo" class="logo">
+</header>
+<div class="hero">
+    <h1>MAXIMIZE MARGINS<br>MINIMIZE LOSSES</h1>
+    <a href="#contact" class="cta-button">Request a Demo</a>
+</div>
     <style>
     body { 
         font-family: 'Arial', sans-serif; 
@@ -16,24 +23,32 @@
         flex-direction: column; 
     }
     header { 
-        background: rgba(46, 125, 50, 0.9); 
-        padding: 60px 20px; 
+        background-color: white; 
+        padding: 20px 0; 
         text-align: center; 
-        position: relative; 
+        width: 100%; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
     }
-    header h1 { 
+    .logo { 
+        max-width: 200px; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto; 
+    }
+    .hero { 
+        text-align: center; 
+        padding: 60px 20px; 
+        background: rgba(46, 125, 50, 0.9); 
+        color: #fbc02d; 
+        margin-bottom: 20px; 
+    }
+    .hero h1 { 
         font-size: 64px; 
         font-weight: 900; 
-        color: #fbc02d; 
         margin: 0; 
         text-transform: uppercase; 
         letter-spacing: 2px; 
         text-shadow: 1px 1px 5px rgba(0,0,0,0.3); 
-    }
-    .logo { 
-        max-width: 200px; 
-        margin: 20px auto; 
-        display: block; 
     }
     .cta-button { 
         display: inline-block; 
@@ -44,6 +59,7 @@
         border-radius: 25px; 
         font-weight: bold; 
         transition: transform 0.3s; 
+        margin-top: 20px; 
     }
     .cta-button:hover { 
         background-color: #e6b800; 
@@ -81,10 +97,6 @@
         margin: 20px 0; 
         border-radius: 15px; 
         box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-    }
-    .hero { 
-        text-align: center; 
-        padding: 40px 20px; 
     }
     .features { 
         display: grid; 
@@ -139,7 +151,7 @@
         flex-shrink: 0; 
     }
     @media (max-width: 768px) { 
-        header h1 { font-size: 48px; } 
+        .hero h1 { font-size: 48px; } 
         .features { grid-template-columns: 1fr; } 
         .section { padding: 20px; } 
     }
