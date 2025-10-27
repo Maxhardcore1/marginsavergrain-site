@@ -46,14 +46,22 @@
 }
 
 
-    .hero h1 { 
-        font-size: 64px; 
-        font-weight: 900; 
-        margin: 0; 
-        text-transform: uppercase; 
-        letter-spacing: 2px; 
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.3); 
-    }
+    .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fbc02d;
+    animation: flashGold 1.5s infinite;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+@keyframes flashGold {
+    0%, 100% { color: #fbc02d; }
+    50% { color: #ffd54f; }
+}
     .cta-button { 
         display: inline-block; 
         padding: 15px 30px; 
