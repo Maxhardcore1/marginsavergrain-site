@@ -63,20 +63,24 @@
     50% { color: #ffd54f; transform: scale(1.05); }
     100% { color: #fbc02d; transform: scale(1); }
 }
-    .cta-button { 
-        display: inline-block; 
-        padding: 15px 30px; 
-        background-color: #fbc02d; 
-        color: #2e7d32; 
-        text-decoration: none; 
-        border-radius: 25px; 
-        font-weight: bold; 
-        transition: transform 0.3s; 
-        margin-top: 20px; 
-    }
-    .cta-button:hover { 
-        background-color: #e6b800; 
-        transform: scale(1.05); 
+    .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fbc02d; /* gold */
+    color: #2e7d32; /* green text */
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(251, 192, 45, 0.6); /* soft glow */
+}
+.cta-button:hover {
+    background-color: #e6b800; /* deeper gold */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(251, 192, 45, 0.8); /* stronger glow */
+}
     }
     nav { 
         background-color: #4caf50; 
