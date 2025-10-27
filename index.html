@@ -46,7 +46,7 @@
 }
 
 
-    .hero h1 {
+   .hero h1 {
     font-size: 48px;
     font-weight: 900;
     margin: 0;
@@ -54,13 +54,14 @@
     letter-spacing: 2px;
     text-align: center;
     color: #fbc02d;
-    animation: flashGold 1.5s infinite;
+    animation: pulseGold 2s infinite;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 
-@keyframes flashGold {
-    0%, 100% { color: #fbc02d; }
-    50% { color: #ffd54f; }
+@keyframes pulseGold {
+    0% { color: #fbc02d; transform: scale(1); }
+    50% { color: #ffd54f; transform: scale(1.05); }
+    100% { color: #fbc02d; transform: scale(1); }
 }
     .cta-button { 
         display: inline-block; 
