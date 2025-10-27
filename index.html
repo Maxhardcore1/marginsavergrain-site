@@ -5,35 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarginSaverGrain - Maximize Margins, Minimize Losses</title>
     <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #2e7d32; color: white; }
-    header { background-color: #2e7d32; padding: 40px 20px; text-align: center; width: 100%; }
-    header p { font-size: 48px; font-weight: bold; color: #fbc02d; margin: 0; padding: 20px; text-transform: uppercase; }
-    nav { background-color: #4caf50; padding: 15px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 20px; font-size: 18px; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
-    .section { background: rgba(255, 255, 255, 0.9); color: #2e7d32; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
-    .hero { text-align: center; padding: 20px; }
-    .cta-button { padding: 10px 20px; background-color: #fbc02d; color: #2e7d32; text-decoration: none; border-radius: 5px; }
-    .cta-button:hover { background-color: #e6b800; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
-    .feature { text-align: center; }
-    .screenshot { max-width: 100%; border-radius: 5px; margin: 10px 0; }
-    form { max-width: 500px; margin: 0 auto; }
-    input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-    button { padding: 10px; background-color: #4caf50; color: white; border: none; border-radius: 5px; }
-    button:hover { background-color: #388e3c; }
-    footer { padding: 10px; background-color: #2e7d32; text-align: center; }
-    @media (max-width: 768px) { header p { font-size: 36px; } .features { grid-template-columns: 1fr; } }
+    body { 
+        font-family: 'Arial', sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background: linear-gradient(135deg, #2e7d32 0%, #f0f0f0 100%); 
+        color: #333; 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    header { 
+        background: rgba(46, 125, 50, 0.9); 
+        padding: 60px 20px; 
+        text-align: center; 
+        position: relative; 
+    }
+    header h1 { 
+        font-size: 64px; 
+        font-weight: 900; 
+        color: #fbc02d; 
+        margin: 0; 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.3); 
+    }
+    .logo { 
+        max-width: 200px; 
+        margin: 20px auto; 
+        display: block; 
+    }
+    .cta-button { 
+        display: inline-block; 
+        padding: 15px 30px; 
+        background-color: #fbc02d; 
+        color: #2e7d32; 
+        text-decoration: none; 
+        border-radius: 25px; 
+        font-weight: bold; 
+        transition: transform 0.3s; 
+    }
+    .cta-button:hover { 
+        background-color: #e6b800; 
+        transform: scale(1.05); 
+    }
+    nav { 
+        background-color: #4caf50; 
+        padding: 10px; 
+        text-align: center; 
+        position: sticky; 
+        top: 0; 
+        z-index: 100; 
+    }
+    nav a { 
+        color: white; 
+        text-decoration: none; 
+        margin: 0 15px; 
+        font-size: 16px; 
+        font-weight: 500; 
+        transition: color 0.3s; 
+    }
+    nav a:hover { 
+        color: #fbc02d; 
+    }
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 20px; 
+        flex: 1 0 auto; 
+    }
+    .section { 
+        background: rgba(255, 255, 255, 0.95); 
+        color: #2e7d32; 
+        padding: 40px; 
+        margin: 20px 0; 
+        border-radius: 15px; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    }
+    .hero { 
+        text-align: center; 
+        padding: 40px 20px; 
+    }
+    .features { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 20px; 
+        margin-top: 20px; 
+    }
+    .feature { 
+        background: #fff; 
+        padding: 20px; 
+        border-radius: 10px; 
+        transition: transform 0.3s; 
+    }
+    .feature:hover { 
+        transform: translateY(-5px); 
+    }
+    .screenshot { 
+        max-width: 100%; 
+        border-radius: 10px; 
+        margin: 15px 0; 
+    }
+    form { 
+        max-width: 500px; 
+        margin: 0 auto; 
+        background: #fff; 
+        padding: 20px; 
+        border-radius: 10px; 
+    }
+    input, textarea { 
+        padding: 12px; 
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+    button { 
+        padding: 12px; 
+        background-color: #4caf50; 
+        color: white; 
+        border: none; 
+        border-radius: 25px; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+    }
+    button:hover { 
+        background-color: #388e3c; 
+    }
+    footer { 
+        background-color: #2e7d32; 
+        padding: 20px; 
+        text-align: center; 
+        flex-shrink: 0; 
+    }
+    @media (max-width: 768px) { 
+        header h1 { font-size: 48px; } 
+        .features { grid-template-columns: 1fr; } 
+        .section { padding: 20px; } 
+    }
 </style>
 </head>
 <body>
     <header>
-        <img src="Logo1.png" alt="MarginSaverGrain Logo" class="logo">
-        <h1>A Full Capture Technology</h1>
-        <p>MAXIMIZE MARGINS<br>MINIMIZE LOSSES</p>
-        <a href="#contact" class="cta-button">Request a Demo</a>
-    </header>
+    <h1>MAXIMIZE MARGINS<br>MINIMIZE LOSSES</h1>
+    <img src="logo.png" alt="MarginSaverGrain Logo" class="logo">
+    <a href="#contact" class="cta-button">Request a Demo</a>
+</header>
     <nav>
         <a href="#home">Home</a>
         <a href="#product">Product</a>
@@ -41,64 +158,47 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="container">
-        <div id="home" class="section hero">
-            <h2>ADVANCED MARGIN-CAPTURE TECHNOLOGY AND QUALITY INSIGHTS</h2>
-            <p>DATA TO DOLLARS</p>
-            <p>In today’s grain industry, declining expertise in quality and inventory management leads to significant sales margin losses. Margin Saver Grain turns this challenge into an opportunity by using advanced integrations and data-driven insights. Recover lost margins, streamline sales, and stay competitive with this modern tool.</p>
-            <p>Bridges knowledge gaps, minimizing the need for phone calls and emails. Leverages scale, ERP, and market data to deliver clear and actionable margin savings. Provides clear dashboards that can be utilized by Merchandisers, Leadership, or Operations Managers. Savings at every level of the chain.</p>
-            <a href="#product" class="cta-button">Explore the Product</a>
-        </div>
-        
-        <div id="product" class="section">
-            <h2>Our Product: Advanced Grain Margin Optimization Software</h2>
-            <p>Discover how MarginSaverGrain helps grain businesses optimize shipments, track inventory, and maximize profits with AI-powered tools.</p>
-            <img src="promo-flyer.png" alt="MarginSaverGrain Promo Banner" class="promo-image">
-            <!-- Embedded UI Screenshot 1: MP Inventory -->
-            <img src="dashboard1.png" alt="Margin Protector-Inventory Dashboard" class="screenshot">
-            <!-- Embedded UI Screenshot 2: Full App Interface -->
-            <p>If you could save $20,000 on a single shipment (or more) with the push of a button, would you? Absolutely—and that’s why Margin Saver Grain is the integrated solution for you!</p>
-        </div>
-        
-        <div id="features" class="section">
-            <h2>WHAT CAN MARGIN SAVER GRAIN DO?</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Optimize Shipment Selections</h3>
-                    <p>Offers a comprehensive view of the most profitable potential shipping origins, automatic quality analyzation, and origination tools.</p>
-                </div>
-                <div class="feature">
-                    <h3>Inventory Awareness and Accountability Tools</h3>
-                    <p>Analyzes location inventories to create the most efficient lots or blends, matching commodity grades to account contracts or standard discounts, and suggests top shipping locations to maximize margins. Considering left over inventory implications and protecting future margins.</p>
-                </div>
-                <div class="feature">
-                    <h3>Carbon Inventory Tracking and Shrink Accumulator</h3>
-                    <p>Integrates with ERP, Scale, or third-party carbon information to build a perspective of in-house grain with associated carbon indicators. Shrink tracking tool gives the user the ability to generate more accurate inventory shrink data and allows for more timely and profitable adjustments.</p>
-                </div>
-            </div>
-            <h3>AUTOMATIC GENERATION OF:</h3>
-            <ul>
-                <li>Best Quality and Freight Outbound Margin Situation for multiple sites or a single site's bins</li>
-                <li>Mix and Blend site performance metrics</li>
-                <li>At Risk Grain Positions: Scale and Weather based</li>
-                <li>Most Profitable Farmer Client List</li>
-                <li>Total Shrink Losses per Commodity</li>
-                <li>All sites Carbon Inventory</li>
-                <li>Nearby Posted Bid Scraper and Mapping</li>
-            </ul>
-        </div>
-        
-        <div id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Ready to maximize your margins? Get in touch for a demo or more info. Based in Hutchinson, Kansas.</p>
-            <p><strong>Phone:</strong> (620) 664-7734</p>
-            <form action="mailto:info@marginsavergrain.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Tell us about your grain business needs..." rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+    <div id="home" class="section hero">
+        <h2>Advanced Margin-Capture Technology</h2>
+        <p>In today’s grain industry, declining expertise leads to margin losses. MarginSaverGrain turns this into opportunity with data-driven insights.</p>
+        <a href="#contact" class="cta-button">Get Started</a>
     </div>
+    <div id="product" class="section">
+        <h2>Our Product</h2>
+        <p>Optimize your grain business with AI-powered tools.</p>
+        <img src="dashboard1.png" alt="Margin Protector-Inventory Dashboard" class="screenshot">
+        <img src="dashboard2.png" alt="MarginSaverGrain Full Interface" class="screenshot">
+    </div>
+    <div id="features" class="section">
+        <h2>What Can MarginSaverGrain Do?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Optimize Shipments</h3>
+                <p>View profitable shipping origins with automatic quality analysis.</p>
+            </div>
+            <div class="feature">
+                <h3>Inventory Tools</h3>
+                <p>Identify at-risk inventory for timely shipping.</p>
+            </div>
+            <div class="feature">
+                <h3>Carbon Tracking</h3>
+                <p>Integrate ERP and scale data for carbon insights.</p>
+            </div>
+        </div>
+        <p>If you could save $20,000 per shipment, would you? MarginSaverGrain makes it possible!</p>
+    </div>
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Based in Hutchinson, Kansas. Reach out for a demo.</p>
+        <p><strong>Phone:</strong> (620) 664-7734</p>
+        <form action="mailto:info@marginsavergrain.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
     <footer>
         <p>&copy; 2025 MarginSaverGrain. All rights reserved. | Hutchinson, Kansas | <a href="www.marginsavergrain.com" style="color: #fbc02d;">www.marginsavergrain.com</a></p>
     </footer>
