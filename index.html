@@ -22,13 +22,12 @@
   <div class="carousel-container">
     <div class="carousel-track">
       <img src="car1.png" alt="Grain Scale to Merchandiser">
-      <img src="car3.jpeg" alt="Margin Saver Dashboard Flow">
+      <img src="car3.png" alt="Margin Saver Dashboard Flow">
     </div>
     <button class="carousel-btn prev">&#10094;</button>
     <button class="carousel-btn next">&#10095;</button>
   </div>
-</div>
-    </div></div>
+</div>    </div></div>
     <style>
     body { 
         font-family: 'Arial', sans-serif; 
@@ -219,9 +218,11 @@
 }
 
 .carousel-track img {
-  width: 100vw;
-  max-height: 400px; /* Adjust this value as needed */
-  object-fit: cover;  /* Ensures the image fills the space without distortion */
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .carousel-btn {
@@ -238,7 +239,7 @@
 }
 
 .carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }</style>
+.carousel-btn.next { right: 10px; }
 </head>
 <body>
        <nav>
@@ -308,7 +309,7 @@
   let index = 0;
 
   function updateCarousel() {
-    const width = track.offsetWidth;
+    const width = track.clientWidth;
     track.style.transform = `translateX(-${index * width}px)`;
   }
 
@@ -334,6 +335,11 @@
         contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  });
+
+  window.addEventListener('resize', updateCarousel);
+  window.addEventListener('load', updateCarousel);
+</script>
   });
 
   window.addEventListener('resize', updateCarousel);
