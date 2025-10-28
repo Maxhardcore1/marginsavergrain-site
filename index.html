@@ -6,7 +6,18 @@
     <title>MarginSaverGrain - Maximize Margins, Minimize Losses</title>
     <style> ... </style>
 </head>
-
+<div id="carousel-section" class="section">
+  <h2 style="text-align:center; color:#2e7d32;">Margin Saver Flow</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="car1.png" alt="Grain Scale to Merchandiser">
+      <img src="cartoon2.png" alt="Margin Saver Dashboard Flow">
+      <!-- Add more images as needed -->
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</div>
 <body>
     <header>
         <img src="Logo1.png" alt="MarginSaverGrain Logo" class="logo">
@@ -190,6 +201,43 @@
     background-color: rgba(46, 125, 50, 0.8); 
     border-radius: 5px; 
 }
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: contain;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
 </style>
 </head>
 <body>
@@ -251,6 +299,55 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Carousel logic
+  const track = document.querySelector('.carousel-track');
+  const images = document.querySelectorAll('.carousel-track img');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  let index = 0;
+
+  function updateCarousel() {
+    const width = images[0].clientWidth;
+    track.style.transform = `translateX(-${index * width}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    updateCarousel();
+  });
+
+  // Auto swipe every 5 seconds
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    updateCarousel();
+  }, 5000);
+
+  // Click-to-scroll to #contact
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  window.addEventListener('resize', updateCarousel);
+</script>
     </script>
 </body>
 </html>
