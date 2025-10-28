@@ -300,6 +300,7 @@
             });
         });
 <script>
+  <script>
   // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -316,7 +317,7 @@
   let index = 0;
 
   function updateCarousel() {
-    const width = images[0].clientWidth;
+    const width = track.offsetWidth;
     track.style.transform = `translateX(-${index * width}px)`;
   }
 
@@ -330,13 +331,11 @@
     updateCarousel();
   });
 
-  // Auto swipe every 5 seconds
   setInterval(() => {
     index = (index + 1) % images.length;
     updateCarousel();
   }, 5000);
 
-  // Click-to-scroll to #contact
   images.forEach(img => {
     img.addEventListener('click', () => {
       const contactSection = document.querySelector('#contact');
@@ -347,6 +346,8 @@
   });
 
   window.addEventListener('resize', updateCarousel);
+  window.addEventListener('load', updateCarousel);
+</script>
 </script>
     </script>
 </body>
