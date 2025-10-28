@@ -17,17 +17,17 @@
         <div style="text-align: center;">
             <a href="#contact" class="cta-button">Request a Demo</a>
         </div>
-<div id="carousel-section" class="section">
+<!-- Carousel Section -->
+<div id="carousel-section">
   <div class="carousel-container">
     <div class="carousel-track">
       <img src="car1.png" alt="Grain Scale to Merchandiser">
-      <img src="car3.png" alt="Margin Saver Dashboard Flow">
-      <!-- Add more images as needed -->
+      <img src="car3.jpeg" alt="Margin Saver Dashboard Flow">
     </div>
     <button class="carousel-btn prev">&#10094;</button>
     <button class="carousel-btn next">&#10095;</button>
   </div>
-
+</div>
     </div></div>
     <style>
     body { 
@@ -201,13 +201,16 @@
     background-color: rgba(46, 125, 50, 0.8); 
     border-radius: 5px; 
 }
+#carousel-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .carousel-container {
   position: relative;
   overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 .carousel-track {
@@ -216,11 +219,11 @@
 }
 
 .carousel-track img {
-  width: 100%;
+  width: 100vw;
+  height: auto;
   flex-shrink: 0;
-  object-fit: contain;
+  object-fit: cover;
   cursor: pointer;
-  padding: 10px;
 }
 
 .carousel-btn {
@@ -237,8 +240,7 @@
 }
 
 .carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
-</style>
+.carousel-btn.next { right: 10px; }</style>
 </head>
 <body>
        <nav>
@@ -301,15 +303,6 @@
         });
 <script>
   <script>
-  // Smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Carousel logic
   const track = document.querySelector('.carousel-track');
   const images = document.querySelectorAll('.carousel-track img');
   const prevBtn = document.querySelector('.carousel-btn.prev');
