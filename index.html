@@ -115,7 +115,6 @@
 
     .carousel-btn.prev { left: 10px; }
     .carousel-btn.next { right: 10px; }
-
     nav {
       background-color: #4caf50;
       padding: 10px;
@@ -178,6 +177,17 @@
       margin: 15px 0;
     }
 
+    .savings-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fbc02d;
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background-color: rgba(46, 125, 50, 0.8);
+      border-radius: 5px;
+    }
+
     form {
       max-width: 500px;
       margin: 0 auto;
@@ -192,6 +202,7 @@
       border-radius: 5px;
       width: 100%;
       box-sizing: border-box;
+      margin-bottom: 10px;
     }
 
     button {
@@ -208,28 +219,10 @@
       background-color: #388e3c;
     }
 
-    footer {
-      background-color: #2e7d32;
-      padding: 20px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-
     @media (max-width: 768px) {
       .hero h1 { font-size: 32px; }
       .features { grid-template-columns: 1fr; }
       .section { padding: 20px; }
-    }
-
-    .savings-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fbc02d;
-      text-align: center;
-      margin: 20px 0;
-      padding: 10px;
-      background-color: rgba(46, 125, 50, 0.8);
-      border-radius: 5px;
     }
   </style>
 </head>
@@ -245,7 +238,6 @@
     </div>
   </div>
 
-  <!-- Carousel Section -->
   <div id="carousel-section">
     <div class="carousel-container">
       <div class="carousel-track">
@@ -265,7 +257,7 @@
   </nav>
 
   <div class="container">
-    <div id="home" class="section hero">
+    <div id="home" class="section">
       <h2>Advanced Margin-Capture Technology</h2>
       <p>In today’s grain industry, declining expertise in quality and inventory management leads to significant sales margin losses. Margin Saver Grain turns this challenge into an opportunity by using advanced integrations and data-driven insights. Recover lost margins, streamline sales, and stay competitive with this modern tool.</p>
       <a href="#contact" class="cta-button">Get Started</a>
@@ -273,4 +265,95 @@
 
     <div id="product" class="section">
       <h2>Our Product</h2>
-      <p>
+      <p>Optimize your grain business with powerful tools built by industry insiders.</p>
+      <img src="dashboard3.png" alt="Margin Protector-Inventory Dashboard" class="screenshot">
+    </div>
+
+    <div id="features" class="section">
+      <h2>What Can MarginSaverGrain Do?</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Optimize Outbound Shipments Margins</h3>
+          <p>View profitable shipping origins with automatic quality analysis and remaining inventory margin protection.</p>
+        </div>
+        <div class="feature">
+          <h3>Inventory Tools</h3>
+          <p>Automatically identifies inventory at risk of quality deterioration and its location, allowing for timely shipping before value diminishes. Additionally, the mix and blend dashboard provides insight into who is executing shipping requests and highlights areas where significant losses or gains are taking place.</p>
+        </div>
+        <div class="feature">
+          <h3>Carbon Tracking and Shrink Management</h3>
+          <p>Integrate ERP and scale data for carbon insights and shrink accumulation by commodity.</p>
+        </div>
+      </div>
+      <p class="savings-text">If you could save $20,000 per shipment, would you? Margin Saver Grain makes it possible!</p>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact Us</h2>
+      <p>Based in Hutchinson, Kansas. Reach out for a demo.</p>
+      <p><strong>Phone:</strong> (620) 664-7734</p>
+      <form action="mailto:info@marginsavergrain.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div> <!-- end .container -->
+
+  <footer>
+    <p>&copy; 2025 MarginSaverGrain. All rights reserved. | Hutchinson, Kansas | 
+      <a href="https://www.marginsavergrain.com" style="color: #fbc02d;">www.marginsavergrain.com</a>
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const images = document.querySelectorAll('.carousel-track img');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let index = 0;
+
+    function updateCarousel() {
+      const width = track.clientWidth;
+      track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    }, 5000);
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    window.addEventListener('load', updateCarousel);
+  </script>
+</body>
+</html>
