@@ -9,71 +9,60 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #2e7d32 0%, #f0f0f0 100%);
+      background-color: #f9f9f9;
       color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
     header {
-      background-color: white;
-      padding: 20px 0;
-      text-align: center;
-      width: 100%;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: #1b3d2f;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo {
-      width: 200px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+      height: 50px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #fbc02d;
     }
     .hero {
-      text-align: center;
-      padding: 30px 20px;
-      background: rgba(46, 125, 50, 0.9);
+      background: linear-gradient(to bottom, #1b3d2f, #2e7d32);
       color: #fbc02d;
+      text-align: center;
+      padding: 60px 20px;
     }
     .hero h1 {
       font-size: 48px;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      animation: pulseGold 2s infinite;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
     }
-    @keyframes pulseGold {
-      0% { color: #fbc02d; transform: scale(1); }
-      50% { color: #ffd54f; transform: scale(1.05); }
-      100% { color: #fbc02d; transform: scale(1); }
+    .hero p {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 30px;
     }
     .cta-button {
-      display: inline-block;
-      padding: 15px 30px;
       background-color: #fbc02d;
-      color: #2e7d32;
-      text-decoration: none;
+      color: #1b3d2f;
+      padding: 15px 30px;
+      border: none;
       border-radius: 25px;
       font-weight: bold;
       font-size: 18px;
-      margin-top: 20px;
-      box-shadow: 0 0 12px rgba(251, 192, 45, 0.6);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .cta-button:hover {
-      background-color: #e6b800;
-      transform: scale(1.05);
-      box-shadow: 0 0 18px rgba(251, 192, 45, 0.8);
-    }
-    #carousel-section {
-      width: 100%;
-      margin: 0;
-      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
     }
     .carousel-container {
       position: relative;
       overflow: hidden;
       width: 100%;
+      max-height: 400px;
     }
     .carousel-track {
       display: flex;
@@ -81,10 +70,8 @@
     }
     .carousel-track img {
       width: 100%;
-      max-height: 400px;
       object-fit: cover;
       flex-shrink: 0;
-      cursor: pointer;
     }
     .carousel-btn {
       position: absolute;
@@ -100,175 +87,122 @@
     }
     .carousel-btn.prev { left: 10px; }
     .carousel-btn.next { right: 10px; }
-    nav {
-      background-color: #4caf50;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #fbc02d;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      flex: 1 0 auto;
-    }
     .section {
-      background: rgba(255, 255, 255, 0.95);
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 32px;
       color: #2e7d32;
-      padding: 40px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      margin-top: 20px;
     }
     .feature {
       background: #fff;
       padding: 20px;
       border-radius: 10px;
-      transition: transform 0.3s;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-    .screenshot {
-      max-width: 100%;
-      border-radius: 10px;
-      margin: 15px 0;
-    }
-    .savings-text {
-      font-size: 24px;
-      font-weight: bold;
-      color: #fbc02d;
-      text-align: center;
-      margin: 20px 0;
-      padding: 10px;
-      background-color: rgba(46, 125, 50, 0.8);
-      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     form {
-      max-width: 500px;
-      margin: 0 auto;
       background: #fff;
       padding: 20px;
       border-radius: 10px;
+      max-width: 500px;
+      margin: 0 auto;
     }
     input, textarea {
+      width: 100%;
       padding: 12px;
+      margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 10px;
     }
     button {
-      padding: 12px;
       background-color: #4caf50;
       color: white;
+      padding: 12px;
       border: none;
       border-radius: 25px;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
-    button:hover {
-      background-color: #388e3c;
-    }
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 32px; }
-      .features { grid-template-columns: 1fr; }
-      .section { padding: 20px; }
+    footer {
+      background-color: #1b3d2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo1.png" alt="MarginSaverGrain Logo" class="logo">
+    <a href="/"><img src="logo1.png" alt="MarginSaverGrain Logo" class="logo"></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#product">Product</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <div class="hero">
-    <h1>MAXIMIZE MARGINS<br>MINIMIZE LOSSES</h1>
-    <a href="#contact" class="cta-button">Request a Demo</a>
+    <h1>Maximize Margins, Minimize Losses</h1>
+    <p>Recover lost profits and streamline operations with Margin Saver Grain.</p>
+    <a href="#contact" class="cta-button">Get Started</a>
+  </div>  <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="car1.png" alt="Grain Scale to Merchandiser">
+      <img src="car3.png" alt="Margin Saver Dashboard Flow">
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
   </div>
 
-  <div id="carousel-section">
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <img src="car1.png" alt="Grain Scale to Merchandiser">
-        <img src="car3.png" alt="Margin Saver Dashboard Flow">
+  <div id="home" class="section">
+    <h2>Advanced Margin-Capture Technology</h2>
+    <p>In today’s grain industry, declining expertise in quality and inventory management leads to significant sales margin losses. Margin Saver Grain turns this challenge into an opportunity by using advanced integrations and data-driven insights. Recover lost margins, streamline sales, and stay competitive with this modern tool.</p>
+    <a href="#contact" class="cta-button">Get Started</a>
+  </div>
+
+  <div id="product" class="section">
+    <h2>Our Product</h2>
+    <p>Optimize your grain business with powerful tools built by industry insiders.</p>
+    <img src="dashboard3.png" alt="Margin Protector-Inventory Dashboard" class="screenshot">
+  </div>
+
+  <div id="features" class="section">
+    <h2>What Can MarginSaverGrain Do?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Optimize Outbound Shipments Margins</h3>
+        <p>View profitable shipping origins with automatic quality analysis and remaining inventory margin protection.</p>
       </div>
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
+      <div class="feature">
+        <h3>Inventory Tools</h3>
+        <p>Automatically identifies inventory at risk of quality deterioration and its location, allowing for timely shipping before value diminishes. Additionally, the mix and blend dashboard provides insight into who is executing shipping requests and highlights areas where significant losses or gains are taking place.</p>
+      </div>
+      <div class="feature">
+        <h3>Carbon Tracking and Shrink Management</h3>
+        <p>Integrate ERP and scale data for carbon insights and shrink accumulation by commodity.</p>
+      </div>
     </div>
   </div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#product">Product</a>
-    <a href="#features">Features</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <div id="home" class="section">
-      <h2>Advanced Margin-Capture Technology</h2>
-      <p>In today’s grain industry, declining expertise in quality and inventory management leads to significant sales margin losses. Margin Saver Grain turns this challenge into an opportunity by using advanced integrations and data-driven insights. Recover lost margins, streamline sales, and stay competitive with this modern tool.</p>
-      <a href="#contact" class="cta-button">Get Started</a>
-    </div>
-
-    <div id="product" class="section">
-      <h2>Our Product</h2>
-      <p>Optimize your grain business with powerful tools built by industry insiders.</p>
-      <img src="dashboard3.png" alt="Margin Protector-Inventory Dashboard" class="screenshot">
-    </div>
-
-    <div id="features" class="section">
-      <h2>What Can MarginSaverGrain Do?</h2>
-      <div class="features">
-        <div class="feature">
-          <h3>Optimize Outbound Shipments Margins</h3>
-          <p>View profitable shipping origins with automatic quality analysis and remaining inventory margin protection.</p>
-        </div>
-        <div class="feature">
-          <h3>Inventory Tools</h3>
-          <p>Automatically identifies inventory at risk of quality deterioration and its location, allowing for timely shipping before value diminishes. Additionally, the mix and blend dashboard provides insight into who is executing shipping requests and highlights areas where significant losses or gains are taking place.</p>
-        </div>
-        <div class="feature">
-          <h3>Carbon Tracking and Shrink Management</h3>
-          <p>Integrate ERP and scale data for carbon insights and shrink accumulation by commodity.</p>
-        </div>
-      </div>
-      <p class="savings-text">If you could save $20,000 per shipment, would you? Margin Saver Grain makes it possible!</p>
-    </div>
-
-    <div id="contact" class="section">
-      <h2>Contact Us</h2>
-      <p>Based in Hutchinson, Kansas. Reach out for a demo.</p>
-      <p><strong>Phone:</strong> (620) 664-7734</p>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </div> <!-- end .container -->
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Based in Hutchinson, Kansas. Reach out for a demo.</p>
+    <p><strong>Phone:</strong> (620) 664-7734</p>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
   <footer>
     <p>&copy; 2025 MarginSaverGrain. All rights reserved. | Hutchinson, Kansas |
@@ -311,15 +245,6 @@
       index = (index + 1) % images.length;
       updateCarousel();
     }, 5000);
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        const contactSection = document.querySelector('#contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
 
     window.addEventListener('resize', updateCarousel);
     window.addEventListener('load', updateCarousel);
