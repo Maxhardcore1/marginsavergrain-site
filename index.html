@@ -108,12 +108,21 @@ header nav a:hover {
 
 .carousel-track img {
   flex: 0 0 100%;
-  height: 100%;
+  height: inherit;
   width: auto;
   object-fit: cover;
   display: block;
 }
-  .carousel-btn {
+ @media (max-width: 768px) {
+  .carousel-container {
+    height: 180px; /* ✅ smaller height for mobile */
+  }
+
+  .carousel-track img {
+    height: 180px;
+  }
+} 
+.carousel-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
